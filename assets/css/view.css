@@ -1,0 +1,93 @@
+:root{
+    --black: #00000f;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-transform: capitalize;
+    border: none;
+    outline: none;
+}
+
+.head .nav{
+    background-color: var(--black);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+    padding: 0 50px;
+}
+
+.head .nav .links{
+    display: flex;
+    align-items: center;
+    color: white;
+}
+
+
+.head .nav .links a{
+    font-size: 18px;
+    color: white;
+    text-decoration: none;
+    margin: 0 0 0 20px;
+}
+
+.head .nav .links a button{
+    background-color: white;
+    text-decoration: none;
+    font-size: 18px;
+    border-radius: 50px;
+    padding: 10px 33px;
+    text-decoration: none;
+    margin-left: 0px;
+    cursor: pointer;
+}
+
+.main .cont{
+    margin: 100px auto;
+    height: 100vh;
+    width: 60%;
+}
+
+.main .cont div h1{
+    font-size: 40px;
+}
+
+.main .cont .view {
+    margin-top: 30px;
+} 
+
+.main .cont .view img{
+    margin-bottom: 30px;
+}
+
+.main .cont .view p{
+    font-size: 18px;
+    font-weight: bold;
+    margin: 10px 0px;
+}
+
+.main .cont .view p span{
+    font-weight: normal;
+}
+
+.footer footer{
+    width: 100%;
+    background-color: var(--black);
+    height: 60px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer footer p{
+    font-size: 18px;
+}

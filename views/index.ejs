@@ -4,11 +4,170 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= title %></title>
+    <link rel="stylesheet" href="../assets/css/start.css">
+    <link rel="stylesheet" href="/assets/css/start.css">
+    <script src="../assets/ckeditor/ckeditor.js"></script>
+    <title>HEXA Start</title>
+    <style>
+        :root{
+            --black: #00000f;
+        }
+        
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        
+        html{
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            text-transform: capitalize;
+            border: none;
+        }
+        
+        .head .nav{
+            background-color: var(--black);
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+            padding: 0 50px;
+        }
+        
+        .head .nav .links{
+            display: flex;
+            align-items: center;
+            color: white;
+        }
+        
+        
+        .head .nav .links a{
+            font-size: 18px;
+            color: white;
+            text-decoration: none;
+            margin: 0 0 0 20px;
+        }
+        
+        .head .nav .links a button{
+            background-color: white;
+            text-decoration: none;
+            font-size: 18px;
+            border-radius: 50px;
+            padding: 10px 33px;
+            text-decoration: none;
+            margin-left: 0px;
+            cursor: pointer;
+        }
+        
+        /* .main{
+            height: 100vh;
+        } */
+        
+        .main .cont{
+            margin: 150px auto;
+            /* height: 100vh; */
+            width: 600px;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+        }
+        
+        .main .cont div h1{
+            font-size: 40px;
+        }
+        
+        .main .cont .form form input{
+            background-color: transparent;
+            display: block;
+            border: none;
+            border-bottom: solid 2px var(--black);
+            width: 100%;
+            margin: 50px 0;
+            font-size: 18px;
+            outline: none;
+            padding: 7px 7px;
+        }
+        
+        .main .cont .form form input::placeholder{
+            color: gray;
+            font-size: 18px;
+        }
+        
+        /* .main .cont .form form textarea{
+            margin-bottom: 100px;
+        } */
+        
+        .main .cont .form button{
+            color: white;
+            background-color: var(--black);
+            border-radius: 100px;
+            padding: 15px 0px;
+            font-size: 18px;
+            width: 100%;
+            cursor: pointer;
+            margin-top: 50px;
+        }
+        
+        
+        .footer footer{
+            width: 100%;
+            background-color: var(--black);
+            height: 60px;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .footer footer p{
+            font-size: 18px;
+        }
+        
+    </style>
 </head>
 <body>
-    <h1>
-        home page
-    </h1>
+    <section class="head">
+        <nav class="nav">
+            <div class="logo">
+                <h1>HEXA</h1>
+            </div>
+            <div class="links">
+                <a href="index.html">home</a>
+                <a href="start.html">start</a>
+                <a href="login.html"><button>login</button></a>
+            </div>
+        </nav>
+    </section>
+
+    <section class="main">
+        <div class="cont">
+            <div>
+                <h1>new request</h1>
+            </div>
+            <div class="form">
+                <form action="">
+                    <input type="text" placeholder="Name">
+                    <input type="email" name="" id="" placeholder="Email">
+                    <input type="file" name="" id="" placeholder="choose imh file">
+                    <textarea name="sample" id="sample" cols="30" rows="10">
+                        write your message..
+                    </textarea>
+                    <script>
+                      CKEDITOR.replace("sample");
+                    </script>
+
+                    <button type="submit">submit</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <section class="footer">
+        <footer>
+            <p>HEXA &copy; copyright 2023</p>
+        </footer>
+    </section>
+    <script src="app.js"></script>
 </body>
 </html>
