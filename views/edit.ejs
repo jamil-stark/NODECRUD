@@ -1,22 +1,56 @@
-<%- include('layout/header') %>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="../css/start.css">
+    <link rel="stylesheet" href="../css/dash.css">
+    <link rel="stylesheet" href="../css/login.css">
+    <link rel="stylesheet" href="../css/indeee.css">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link href="./css/datatables.min.css" rel="stylesheet"/>
+
+    <script src="../ckeditor/ckeditor.js"></script>
+    <title><%= title %></title>
+    
+</head>
+<body>
+    <section class="head">
+        <nav class="nav">
+            <div class="logo">
+                <h1>HEXA</h1>
+            </div>
+            <div class="links">
+                <a href='/'>home</a>
+                <a href='/add_request'>start</a>
+                <a href='/login'><button>login</button></a>
+            </div>
+        </nav>
+    </section>
+    
+
 <section class="mainn">
     <div class="contn">
         <div>
-            <h1>new request</h1>
+            <h1>edit request (<%= message.name %>)</h1>
         </div>
         <div class="formm">
-            <form action="/add_request" method="post" id="add-form" enctype="multipart/form-data">
-                <input type="text" name="name" placeholder="Name" required>
-                <input type="email" name="email" placeholder="Email" required>
+            <form action="/update/<%= message._id %>" method="post" id="add-form" enctype="multipart/form-data">
+                <input type="text" name="name" value="<%=message.name %>" placeholder="Name" required>
+                <input type="email" name="email" value="<%=message.email %>" placeholder="Email" required>
                 <input type="file" name="image" placeholder="choose image file" required>
-                <textarea name="message" id="sample" cols="30" rows="10" required>
-                    write your message..
+                <img src="../<%= message.image %>" width="100">
+                <input type="hidden" name="old_image" value="<%= message.image %>">
+                <textarea name="message" value="<%=message.message %>" id="sample" cols="30" rows="10" required>
+                    <%=message.message %>
                 </textarea>
                 <script>
                   CKEDITOR.replace("message");
                 </script>
 
-                <button type="submit" name="submit">submit</button>
+                <button type="submit" name="submit">Update User</button>
             </form>
         </div>
     </div>

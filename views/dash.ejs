@@ -16,8 +16,8 @@
                         <th>Image</th>
                         <th>name</th>
                         <th>email</th>
-                        <th>view</th>
-                        <th>edit</th>
+                        <!-- <th>view</th> -->
+                        <th>view / edit</th>
                         <th>delete</th>
                     </tr>
                 </thead>
@@ -28,8 +28,8 @@
                             <td> <img src="<%= row.image%>" width="50" class="image-thumbnail" alt=""> </td>
                             <td><%= row.name %></td>
                             <td><%= row.email %></td>
-                            <td><a href="/view/<%= row._id %>">view</a></td>
-                            <td> <a href="/edit/<%=row._id %>">edit</a> </td>
+                            <!-- <td><a href="/view/<%= row._id %>">view</a></td> -->
+                            <td> <a href="/edit/<%=row._id %>">View / edit</a> </td>
                             <td> <a href="/delete/<%=row._id %>">delete</a> </td>
                         </tr>
                     <% }) %>

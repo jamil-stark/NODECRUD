@@ -47,6 +47,25 @@ router.get('/add_request', (req, res) => {
     res.render('add_request', {title: 'add request'});
 });
 
+//edit user route
+router.get('/edit/:id', (req, res) => {
+    let id = req.params.id;
+    Message.findById(id).exec()
+        .then((message) => {
+            if (message == null) {
+                res.redirect('/');
+            } else {
+                res.render('edit', {
+                    title: 'Edit Request',
+                    message: message,
+                })
+            }
+        })
+        .catch((err) => {
+            res.redirect('/');
+        });
+});
+
 router.get('/login', (req, res) => {
     res.render('login', {title: 'Login'});
 });
