@@ -1,5 +1,43 @@
 const express = require('express');
 const router = express.Router();
+const Message = require('../models/messages');
+const multer = require('multer');
+
+//image uplaod 
+var storage = multer.diskStorage({
+    destination: function(req, file, cb){
+        cb(null, './uploads')
+    },
+    filename: function(req, file, cb){
+        cb(null, file.fieldname + "_" + Date.now() + "_" + file.originalname);
+    },
+});
+
+var uplaod = multer({
+    storage: storage,
+}).single('image');
+
+//insert request || message
+router.post('/add_request', uplaod, (req, res) => {
+    const message = new Message({
+        name: req.body.name,
+        email: req.body.email,
+        image: req.file.filename,
+        message: req.body.message
+    });
+    message.save()
+        .then(() => {
+            req.session.message = {
+                type: 'success',
+                message: 'User added!'
+            };
+            res.redirect('/');
+        })
+        .catch((err) => {
+            res.json({message: err.message, type: 'danger'});
+        });
+});
+
 
 router.get('/', (req, res) => {
     res.render('index', {title: 'Home Page'});

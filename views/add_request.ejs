@@ -7,13 +7,13 @@
         <div class="formm">
             <form action="/add_request" method="post" id="add-form" enctype="multipart/form-data">
                 <input type="text" name="name" placeholder="Name" required>
-                <input type="email" name="email" id="" placeholder="Email" required>
-                <input type="file" name="" id="" placeholder="choose image file" required>
-                <textarea name="sample" id="sample" cols="30" rows="10" required>
+                <input type="email" name="email" placeholder="Email" required>
+                <input type="file" name="image" placeholder="choose image file" required>
+                <textarea name="message" id="sample" cols="30" rows="10" required>
                     write your message..
                 </textarea>
                 <script>
-                  CKEDITOR.replace("sample");
+                  CKEDITOR.replace("message");
                 </script>
 
                 <button type="submit" name="submit">submit</button>

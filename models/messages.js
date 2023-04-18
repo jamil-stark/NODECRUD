@@ -1,7 +1,5 @@
-const { default: mongoose } = require("mongoose");
-
 const mongoose = require('mongoose');
-const requstSchema = new mongoose.Schema({
+const messageSchema = new mongoose.Schema({
     name: {
         type: String,
         required: true,
@@ -19,4 +17,4 @@ const requstSchema = new mongoose.Schema({
         required: true,
     },
 });
-module.exports = mongoose.model('user',requstSchema)
+module.exports = mongoose.model('message',messageSchema)
