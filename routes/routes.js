@@ -52,8 +52,18 @@ router.get('/login', (req, res) => {
 });
 
 router.get('/dashboard', (req, res) => {
-    res.render('dash', {title: 'DashBoard'});
+    Message.find().exec()
+        .then((messages) => {
+            res.render("dash", {
+                title: "Dashboard",
+                messages: messages,
+            });
+        })
+        .catch((err) => {
+            res.json({message: err.message});
+        });
 });
+
 
 router.get('/view', (req, res) => {
     res.render('view', {title: 'View'});

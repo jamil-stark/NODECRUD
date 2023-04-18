@@ -42,3 +42,4 @@ app.listen(PORT, () => {
 });
 
 app.use(express.static("assets"))
+app.use(express.static("uploads"))

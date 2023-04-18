@@ -5,8 +5,11 @@
         <div>
             <h1>dashboard</h1>
         </div>
+        <% if (messages != '') { %>
+         
+     
         <div class="table">
-            <table>
+            <table class="">
                 <thead>
                     <tr>
                         <th>ID</th>
@@ -19,17 +22,26 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>14</td>
-                        <td> <img src="" alt=""> </td>
-                        <td>lutaaya jamil</td>
-                        <td>jamil@gmail.com</td>
-                        <td><a href="/view">view</a></td>
-                        <td> <a href="">edit</a> </td>
-                        <td> <a href="">delete</a> </td>
-                    </tr>
+                    <% messages.forEach((row, index) => { %>
+                        <tr>
+                            <td><%= index %></td>
+                            <td> <img src="<%= row.image%>" width="50" class="image-thumbnail" alt=""> </td>
+                            <td><%= row.name %></td>
+                            <td><%= row.email %></td>
+                            <td><a href="/view/<%= row._id %>">view</a></td>
+                            <td> <a href="/edit/<%=row._id %>">edit</a> </td>
+                            <td> <a href="/delete/<%=row._id %>">delete</a> </td>
+                        </tr>
+                    <% }) %>
                 </tbody>
                 </table>
         </div>
+        <% } else {%>
+        <h1>
+            No requests found
+        </h1>
+
+        <% } %>
+         
     </div>
 </section>
