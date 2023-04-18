@@ -40,7 +40,7 @@
             <form action="/update/<%= message._id %>" method="post" id="add-form" enctype="multipart/form-data">
                 <input type="text" name="name" value="<%=message.name %>" placeholder="Name" required>
                 <input type="email" name="email" value="<%=message.email %>" placeholder="Email" required>
-                <input type="file" name="image" placeholder="choose image file" required>
+                <input type="file" name="image" placeholder="choose image file">
                 <img src="../<%= message.image %>" width="100">
                 <input type="hidden" name="old_image" value="<%= message.image %>">
                 <textarea name="message" value="<%=message.message %>" id="sample" cols="30" rows="10" required>
